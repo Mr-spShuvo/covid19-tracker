@@ -22,7 +22,7 @@ export const getGlobalData = async () => {
       updated
     };
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 
@@ -31,6 +31,17 @@ export const getHistoricalData = async () => {
     const { data } = await axios.get('/historical/all?lastdays=100', axiosConfig);
     return data;
   } catch (error) {
-    console.log();
+    return error;
+  }
+};
+
+export const getCountryData = async () => {
+  try {
+    const { data } = await axios.get('/countries', axiosConfig);
+    const countries = data.map(item => item.country);
+    const flags = data.map(item => item.countryInfo.flag);
+    return { countries, flags };
+  } catch (error) {
+    return error;
   }
 };

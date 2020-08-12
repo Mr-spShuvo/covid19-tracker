@@ -10,3 +10,9 @@ body {
   width: 80%;
   margin: auto;
 }
+
+#countrySelect {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: start;
+}

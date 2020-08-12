@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 
 import { getHistoricalData } from '../../config';
-// import styles from './Chart.module.css';
+import { Typography } from '@material-ui/core';
+import styles from './Chart.module.css';
 
 const Chart = () => {
   const [chartData, setChartData] = useState({});
@@ -19,7 +20,7 @@ const Chart = () => {
   function getValueData(obj = {}) {
     const arr = [];
     for (let [key, value] of Object.entries(obj)) {
-      arr.push(value); // "first", "one"
+      arr.push(value);
     }
     let newArr = arr.map((item, index) => item - [arr[index - 1] || 0]);
     newArr[0] = 0;
@@ -28,7 +29,7 @@ const Chart = () => {
   function getKeyData(obj = {}) {
     const arr = [];
     for (let [key, value] of Object.entries(obj)) {
-      arr.push(key); // "first", "one"
+      arr.push(key);
     }
     arr[0] = 'DD-MM-YYYY';
     return arr;
@@ -61,8 +62,14 @@ const Chart = () => {
       }}
     />
   ) : null;
-
-  return <div>{LineChart}</div>;
+  return (
+    <div className={styles.chart}>
+      <Typography color="textSecondary" variant="h5" className={styles.chartTitle}>
+        Relative Data for Last 100 Days
+      </Typography>
+      <div>{LineChart}</div>
+    </div>
+  );
 };
 
 export default Chart;

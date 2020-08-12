@@ -1,0 +1,14 @@
+.countryPicker {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.formControl {
+  width: 50%;
+  padding: 0 0.5rem !important;
+}
+
+.formSelect {
+  background-color: #fff !important;
+}

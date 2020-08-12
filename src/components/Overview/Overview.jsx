@@ -17,7 +17,7 @@ const Overview = ({ data: { cases, recovered, deaths, todayCases, todayDeaths, t
       </Grid>
       <Typography color="textSecondary" className={styles.lastUpdate}>
         Last updated on
-        <br /> {new Date(updated).toDateString()}
+        <br /> {new Date(updated).toDateString()}, {new Date(updated).toLocaleTimeString().split(' ')[0]}
       </Typography>
     </>
   );

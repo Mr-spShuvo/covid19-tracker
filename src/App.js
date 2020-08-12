@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './App.module.css';
+import styles from './App.css';
 import { getGlobalData } from './config';
 import { Overview, Chart, CountryPicker } from './components';
 
@@ -16,7 +16,7 @@ export class App extends React.Component {
   render() {
     const data = this.state.data;
     return (
-      <div className={styles.container}>
+      <div className="container">
         <Overview data={data} />
         <CountryPicker />
         <Chart />

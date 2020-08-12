@@ -1,1 +1,8 @@
+.chart {
+  margin: 2rem 0 !important;
+}
 
+.chartTitle {
+  text-align: center;
+  margin-bottom: 1rem !important;
+}
