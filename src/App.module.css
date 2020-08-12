@@ -1,0 +1,12 @@
+* {
+  font-family: 'Lexend Deca', Arial, Helvetica, sans-serif !important;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}

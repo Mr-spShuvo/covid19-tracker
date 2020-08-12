@@ -1,0 +1,47 @@
+.cardBox {
+  width: 13rem;
+  margin: 20px 0 !important;
+}
+
+.cardBox:not(:last-child) {
+  margin-right: 20px !important;
+}
+
+.card {
+  border-bottom: 5px solid lightgrey;
+}
+
+.card svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.card.cases,
+.card.cases svg {
+  border-color: orange;
+}
+.card.cases svg {
+  fill: orange;
+}
+
+.card.recovered {
+  border-color: mediumseagreen;
+}
+.card.recovered svg {
+  fill: mediumseagreen;
+}
+
+.card.deaths {
+  border-color: tomato;
+}
+
+.card svg {
+  margin-right: 5px;
+}
+.cardTitle {
+  display: flex;
+  align-items: center;
+}
+.card.deaths svg {
+  fill: tomato;
+}
