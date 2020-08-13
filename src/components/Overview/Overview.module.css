@@ -1,11 +1,18 @@
 .lastUpdate {
-  text-align: right;
+  text-align: center;
   text-transform: uppercase;
   line-height: 1;
   position: absolute;
-  top: 2rem;
+  top: 13.3rem;
   right: 2rem;
-  font-size: 10px !important;
+  font-size: 11px !important;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 1000px) {
+  .lastUpdate {
+    display: none;
+  }
 }
 
 .gridContainer {
