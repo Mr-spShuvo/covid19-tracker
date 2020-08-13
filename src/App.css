@@ -11,6 +11,17 @@ body {
   margin: auto;
 }
 
+@media (min-width: 800px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 500px) {
+  .container {
+    width: 95%;
+  }
+}
 #countrySelect {
   display: flex !important;
   align-items: center !important;

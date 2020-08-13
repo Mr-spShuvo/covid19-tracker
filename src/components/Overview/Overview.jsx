@@ -10,7 +10,7 @@ const Overview = ({ data: { cases, recovered, deaths, todayCases, todayDeaths, t
   if (!cases) return <OverviewSkeleton></OverviewSkeleton>;
   return (
     <>
-      <Grid container spacing={3} justify="center">
+      <Grid container spacing={3} justify="center" className={styles.gridContainer}>
         <CardItem Icon={RiEmotionUnhappyLine} titleText={'Infected'} todayData={todayCases} totalData={cases} detailsText={'active cases'} cardStyle="cases" />
         <CardItem Icon={RiEmotionSadLine} titleText={'Death'} todayData={todayDeaths} totalData={deaths} detailsText={'total deaths'} cardStyle="deaths" />
         <CardItem Icon={RiEmotionLine} titleText={'Recovered'} todayData={todayRecovered} totalData={recovered} detailsText={'total recovered'} cardStyle="recovered" />

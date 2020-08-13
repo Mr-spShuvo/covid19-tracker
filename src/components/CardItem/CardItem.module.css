@@ -1,5 +1,4 @@
 .cardBox {
-  width: 13rem;
   margin: 20px 0 !important;
 }
 
@@ -7,7 +6,14 @@
   margin-right: 20px !important;
 }
 
+@media (max-width: 1000px) {
+  .cardBox:not(:last-child) {
+    margin-right: 0px !important;
+  }
+}
+
 .card {
+  width: 10rem !important;
   border-bottom: 5px solid lightgrey;
 }
 

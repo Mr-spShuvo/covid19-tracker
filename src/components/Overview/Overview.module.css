@@ -7,3 +7,7 @@
   right: 2rem;
   font-size: 10px !important;
 }
+
+.gridContainer {
+  margin-right: -20px !important;
+}

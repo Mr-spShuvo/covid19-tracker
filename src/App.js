@@ -1,25 +1,33 @@
 import React from 'react';
 
+//eslint-disable-next-line no-unused-vars
 import styles from './App.css';
-import { getGlobalData } from './config';
+
+import { getOverviewData } from './config';
 import { Overview, Chart, CountryPicker } from './components';
 
 export class App extends React.Component {
   state = {
-    data: {}
+    data: {},
+    country: ''
+  };
+
+  handleCountryPicker = async country => {
+    const data = await getOverviewData(country);
+    this.setState({ data, country });
   };
 
   async componentDidMount() {
-    const data = await getGlobalData();
+    const data = await getOverviewData();
     this.setState({ data });
   }
   render() {
-    const data = this.state.data;
+    const { data, country } = this.state;
     return (
       <div className="container">
         <Overview data={data} />
-        <CountryPicker />
-        <Chart />
+        <CountryPicker handleCountryPicker={this.handleCountryPicker} />
+        <Chart country={country} />
       </div>
     );
   }

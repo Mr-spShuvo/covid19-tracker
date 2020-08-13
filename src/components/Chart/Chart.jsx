@@ -5,16 +5,16 @@ import { getHistoricalData } from '../../config';
 import { Typography } from '@material-ui/core';
 import styles from './Chart.module.css';
 
-const Chart = () => {
+const Chart = ({ country }) => {
   const [chartData, setChartData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getHistoricalData();
+      const data = await getHistoricalData(country);
       setChartData(data);
     };
     fetchData();
-  }, []);
+  }, [country]);
 
   /*eslint-disable no-unused-vars */
   function getValueData(obj = {}) {
@@ -62,6 +62,7 @@ const Chart = () => {
       }}
     />
   ) : null;
+
   return (
     <div className={styles.chart}>
       <Typography color="textSecondary" variant="h5" className={styles.chartTitle}>

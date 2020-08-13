@@ -4,8 +4,8 @@ import styles from './CountryPicker.module.css';
 import { getCountryData } from '../../config';
 import { MdPublic } from 'react-icons/md';
 
-const CountryPicker = () => {
-  const [countryData, setCountryData] = useState({});
+const CountryPicker = ({ handleCountryPicker }) => {
+  const [countryData, setCountryData] = useState({ countries: [], flags: [] });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,8 +17,8 @@ const CountryPicker = () => {
     fetchData();
   }, [setLoading]);
 
-  let countries = <></>;
-  if (!loading) {
+  let countries = null;
+  if (countryData?.countries) {
     countries = countryData.countries.map((item, i) => (
       <MenuItem key={i} value={item}>
         <ListItemAvatar>
@@ -35,7 +35,7 @@ const CountryPicker = () => {
         <InputLabel htmlFor="countrySelect" className={styles.formLabel}>
           Select Country
         </InputLabel>
-        <Select id="countrySelect" className={styles.formSelect}>
+        <Select id="countrySelect" className={styles.formSelect} defaultValue={''} onChange={e => handleCountryPicker(e.target.value)}>
           <MenuItem default key={999} value="all">
             <ListItemIcon>
               <MdPublic size="2.8rem" color="#0000e6" />
